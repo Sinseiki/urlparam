@@ -1,4 +1,4 @@
-# urlparam v2
+# URLParam v2
 URLParam v2 is a Javascript Plugin to use URL Parameters as a Javascript Object.
 
 Download js file → <a id="raw-url" href="https://sinseiki.github.io/urlparam/urlparam.js" download target="_blank">urlparam.js</a>
