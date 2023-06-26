@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="urlparam.js"></script>
+  <style>
+    body {
+      font-size: 18px;
+    }
+    body > p {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    img {
+      margin-top: 10px;
+      margin-bottom: 80px;
+      border: 1px solid #333;
+    }
+
+    ul {
+      display: flex;
+      width: 50%;
+      list-style: none;
+    }
+
+    li a {
+      width: 100px;
+      height: 50px;
+      border: 1px solid #333;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+      text-decoration: none;
+    }
+
+    li.on a {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <br />
+  <p>If you add parameters end of URL, you can use these as javascript variables with urlparam()</p>
+  <div class="wrap">
+    <div>
+      <h2>example 1</h2>
+      <p>In this <a
+          href="https://sinseiki.github.io/urlparam/index.html?a=1&b=abc">https://sinseiki.github.io/urlparam/index.html?a=1&b=abc</a>
+      </p>
+      <pre>
+        const params = urlparam();
+      </pre>
+      <p>you can use parameters in 'params' object like</p>
+      <pre>
+        const params = {a:'1', b:'abc'}
+      </pre>
+      <img alt="example" src="example.gif" />
+    </div>
+    <div>
+      <h2>example 2</h2>
+      <p>In this <a
+          href="https://sinseiki.github.io/urlparam/index.html?tabNum=2">https://sinseiki.github.io/urlparam/index.html?tabNum=2</a>
+      </p>
+      <p>you can use tabmenu colored on the second tab with this code.</p>
+      <pre>
+        const params = urlparam();
+        const lis = document.querySelectorAll('li');
+        if(params.tabNum) lis[params.tabNum - 1].classList.add('on');
+      </pre>
+
+      <ul>
+        <li><a href="?tabNum=1">Tab1</a></li>
+        <li><a href="?tabNum=2">Tab2</a></li>
+        <li><a href="?tabNum=3">Tab3</a></li>
+        <li><a href="?tabNum=4">Tab4</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <script>
+    const params = urlparam();
+    const lis = document.querySelectorAll('li');
+    if(params.tabNum) lis[params.tabNum - 1].classList.add('on');
+  </script>
+</body>
+
+</html>
