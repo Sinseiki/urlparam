@@ -13,11 +13,11 @@ Using this JS file, call parameter manually by using 'urlparam' function.
 
 <hr>
 
-const parameters = urlparam()
+```const parameters = urlparam()```
 
 <hr>
 example
 
 In this https://sinseiki.github.io/urlparam/index.html?a=1&b=abc
 
-you can use an object of parameters {a:'1', b:'abc'} because of running 'urlparam()'
+you can use an object of parameters ```{a:'1', b:'abc'}``` because of running ```urlparam()```
